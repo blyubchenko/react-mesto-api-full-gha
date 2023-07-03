@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.252.130.208
+IP 084.252.130.208
 
 Frontend https://mesto.blyubchenko.nomoreparties.sbs
 
