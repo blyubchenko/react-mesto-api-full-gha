@@ -1,0 +1,4 @@
+.login__inputs{
+    display: flex;
+    flex-direction: column;
+}

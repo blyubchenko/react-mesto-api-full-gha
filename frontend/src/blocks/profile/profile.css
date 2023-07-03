@@ -1,0 +1,20 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 42px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+@media screen and (min-width: 880px) {
+  .profile {
+    display: grid;
+    grid-template-columns: 120px 1fr 150px;
+    grid-template-rows: min-content min-content;
+    column-gap: 30px;
+    margin-top: 39px;
+    margin-bottom: 51px;
+  }
+}

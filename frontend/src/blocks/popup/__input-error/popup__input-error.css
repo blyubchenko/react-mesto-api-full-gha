@@ -1,0 +1,5 @@
+.popup__input-error {
+  visibility: hidden;
+  min-height: 25px;
+  padding-top: 5px;
+}

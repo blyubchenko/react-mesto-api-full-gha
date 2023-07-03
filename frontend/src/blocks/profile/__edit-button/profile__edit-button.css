@@ -1,0 +1,24 @@
+.profile__edit-button {
+  background-image: url(../../../images/logo/pen-min.svg);
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  width: 18px;
+  height: 18px;
+  border: none;
+  padding: 0;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 880px) {
+  .profile__edit-button {
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+    margin-top: 8px;
+  }
+}

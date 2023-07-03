@@ -1,0 +1,15 @@
+.profile__wraper-title {
+  display: flex;
+  align-items: center;
+  margin-top: 26px;
+  margin-bottom: 7px;
+}
+
+@media screen and (min-width: 880px) {
+  .profile__wraper-title {
+    grid-row: 1;
+    grid-column: 2;
+    margin-bottom: 0;
+    margin-top: 13px;
+  }
+}

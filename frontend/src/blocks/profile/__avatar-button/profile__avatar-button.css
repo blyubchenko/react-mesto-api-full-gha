@@ -1,0 +1,21 @@
+
+.profile__avatar-button {
+    cursor: pointer;
+    background-color: transparent;
+    background-position: center;
+    padding: 0;
+    position: absolute;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    border: 0;
+    opacity: 0;
+    transition: opacity ease-in 0.3s;
+  }
+
+  .profile__avatar-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../../../images/logo/pen.svg);
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
