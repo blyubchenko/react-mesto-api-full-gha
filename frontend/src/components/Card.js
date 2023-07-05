@@ -8,13 +8,11 @@ function Card(props) {
   function handleDeleteClick() {
     props.onCardDelete(props.card);
   }
-  console.log(props.card.likes.length);
   const isOwn = props.card.owner._id === props.currentUserId;
   const isLiked = props.card.likes.some((i) => i._id === props.currentUserId);
   const cardLikeButtonClassName = `card__like-button ${
     isLiked && "card__like-button_active"
   }`;
-
   return (
     <article className="card">
       {isOwn && (

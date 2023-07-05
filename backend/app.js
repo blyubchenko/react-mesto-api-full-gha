@@ -3,16 +3,17 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 
-const { PORT = 3000 } = process.env;
-const app = express();
 const mongoose = require('mongoose');
+const config = require('./config');
+
+const { port, mongodbUrl } = config;
+const app = express();
 const errorHandler = require('./middlewares/errorHandler');
 const router = require('./routers/index');
 const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { MONGODB_URI = 'mongodb://127.0.0.1/mestodb' } = process.env;
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(mongodbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -33,7 +34,7 @@ app.use(errors());
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log(`Слушаю порт ${PORT}`);
+  console.log(`Слушаю порт ${port}`);
 });

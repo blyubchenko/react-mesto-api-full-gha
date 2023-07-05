@@ -53,7 +53,7 @@ function AddPlacePopup(props) {
         />
         <span
           className={`popup__input-error ${
-            !isValid && "popup__input-error_active" && props.isOpen
+            !isValid && props.isOpen ? "popup__input-error_active" : ''
           }`}
           id="title-error"
         >
@@ -71,7 +71,7 @@ function AddPlacePopup(props) {
         />
         <span
           className={`popup__input-error ${
-            !isValid && "popup__input-error_active" && props.isOpen
+            !isValid && props.isOpen ? "popup__input-error_active" : ''
           }`}
           id="link-error"
         >

@@ -35,29 +35,34 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api
-      .getAllData()
-      .then((res) => {
-        const [cardsData, userData] = res;
-        setCards(cardsData);
-        setCurrentUser(userData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getAllData();
   }, []);
 
   useEffect(() => {
     tokenCheck();
   }, []);
 
+  function getAllData(){
+    api
+    .getAllData()
+    .then((res) => {
+      const [cardsData, userData] = res;
+      setCards(cardsData);
+      setCurrentUser(userData);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
   function login(email, password, event, setFormValue) {
     Auth.login(email, password)
       .then((data) => {
-        if (data.token) {
+        if (data.message === 'Вход выполнен') {
+          getAllData();
           setFormValue({ email: "", password: "" });
           handleLogin(event);
-          navigate("/", { replace: true });
+          tokenCheck();
         }
       })
       .catch((err) => console.log(err));
@@ -78,10 +83,7 @@ function App() {
   }
 
   function tokenCheck() {
-    if (localStorage.getItem("jwt")) {
-      const jwt = localStorage.getItem("jwt");
-      if (jwt) {
-        Auth.getContent(jwt)
+        Auth.getContent()
           .then((res) => {
             if (res) {
               const emailData = res.email;
@@ -94,8 +96,6 @@ function App() {
             console.log(err);
           });
       }
-    }
-  }
 
   function handleEditAvatarClick() {
     setEditAvatarPopupOpen(!isEditAvatarPopupOpen);
@@ -205,9 +205,17 @@ function App() {
   }
 
   function signOut() {
-    localStorage.removeItem("jwt");
-    setLoggedIn(false);
-    navigate("/sign-in");
+    Auth.logout()
+    .then((data) => {
+      if (data.message === 'Выход выполнен') {
+        setLoggedIn(false);
+        navigate("/sign-in");
+        // setEmail("");
+        // setCards([]);
+        // setCurrentUser({});
+      }
+    })
+    .catch((err) => console.log(err));
   }
 
   function loginNavigate() {

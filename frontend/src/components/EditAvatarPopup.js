@@ -45,7 +45,7 @@ function EditAvatarPopup(props) {
         />
         <span
           className={`popup__input-error ${
-            !isValid && "popup__input-error_active &&" && props.isOpen
+            !isValid && props.isOpen ? "popup__input-error_active" : ''
           }`}
           id="avatar-error"
         >

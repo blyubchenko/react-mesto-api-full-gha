@@ -29,23 +29,27 @@ export function login(email, password) {
     body: JSON.stringify({ email, password }),
   })
     .then((response) => inspectResponse(response))
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem("jwt", data.token);
-        return data;
-      }
-    });
 }
 
-export const getContent = (token) => {
+export function logout() {
+  return fetch(`${BASE_URL}/signout`, {
+    method: "GET",
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => inspectResponse(response))
+}
+
+export const getContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     credentials: 'include',
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => inspectResponse(response))
-    .then((data) => data);
+    .then((data) =>  data);
 };
