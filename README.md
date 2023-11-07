@@ -30,6 +30,11 @@ npm run dev
 
 Откройте http://localhost:3000 в браузере.
 
+Требования:
+
+- Node.js v16+
+- MongoDB
+
 ## Используемый стек
 
 - React
