@@ -30,23 +30,10 @@ npm run dev
 
 Откройте http://localhost:3000 в браузере.
 
-Требования:
-- Node.js v16+
-- npm 
-
 ## Используемый стек
 
 - React
 - React Router
 - React Hooks
-- Express.js 
-- JSON Server для mock бэкенда
-- Webpack
-- Babel
-- ESLint
-
-## Команда
-
-- Фронтенд - Иван Иванов
-- Бэкенд - Петр Петров
-- Тестирование - Мария Сидорова
+- Express.js
+- MongoDB
