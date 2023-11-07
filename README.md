@@ -1,15 +1,52 @@
-[![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
+# React Mesto
 
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположен в директории `backend/`, а фронтенд - в `frontend/`
-  
+## Описание
 
-Адрес репозитория: https://github.com/blyubchenko/react-mesto-api-full-gha
+React Mesto - это одностраничное приложение, в котором пользователи могут добавлять фотографии, удалять их и ставить лайки. 
 
-## Ссылки на проект
+Приложение написано с использованием React и подключено к бэкенду на Express.js. Реализована аутентификация и регистрация пользователей, загрузка аватара в профиле.
 
-IP 084.252.130.208
+Цель проекта - изучение React и подключение к бэкенду.
 
-Frontend https://mesto.blyubchenko.nomoreparties.sbs
+## Инструкция по запуску
 
-Backend https://api.mesto.blyubchenko.nomoreparties.sbs
+Клонируйте репозиторий:
+
+```
+git clone https://github.com/username/react-mesto.git
+```
+
+Установите зависимости:
+
+```
+npm install
+```
+
+Запустите сервер:
+
+```
+npm run dev 
+```
+
+Откройте http://localhost:3000 в браузере.
+
+Требования:
+- Node.js v16+
+- npm 
+
+## Используемый стек
+
+- React
+- React Router
+- React Hooks
+- Express.js 
+- JSON Server для mock бэкенда
+- Webpack
+- Babel
+- ESLint
+
+## Команда
+
+- Фронтенд - Иван Иванов
+- Бэкенд - Петр Петров
+- Тестирование - Мария Сидорова
